@@ -1,7 +1,7 @@
 {
     "name": "meow-java-library",
     "version": "1.0.0",
-    "description": "A Java Library",
+    "description": "A simple Node.js app with a UI using Next.js",
     "main": "index.js",
     "scripts": {
       "dev": "next dev",
@@ -15,9 +15,10 @@
       "react-dom": "latest"
     },
     "devDependencies": {},
-    "author": "Zhang1233",
+    "license": "MIT",
+    "author": "Your Name",
     "repository": {
       "type": "git",
-      "url": "https://github.com/Zhang12334/meow-java-library.git"
+      "url": "https://github.com/yourusername/meow-java-library.git"
     }
   }
