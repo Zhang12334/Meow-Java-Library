@@ -2,7 +2,10 @@
 import Head from 'next/head';
 import styles from '../public/styles.css';
 
-export default function Home({ backgroundImageUrl, blurAmount }) {
+const backgroundImageUrl = 'https://bing.img.run/1920x1080.php'; // 自定义背景图片 URL
+const blurAmount = 5; // 自定义背景模糊程度
+
+export default function Home() {
   return (
     <div className="container" style={{ backgroundImage: `url(${backgroundImageUrl})`, filter: `blur(${blurAmount}px)` }}>
       <Head>
@@ -18,14 +21,4 @@ export default function Home({ backgroundImageUrl, blurAmount }) {
       </main>
     </div>
   );
-}
-
-export async function getServerSideProps(context) {
-  const { backgroundUrl = 'https://via.placeholder.com/1920x1080', blur = 5 } = context.query;
-  return {
-    props: {
-      backgroundImageUrl: backgroundUrl,
-      blurAmount: parseInt(blur, 10),
-    },
-  };
 }
