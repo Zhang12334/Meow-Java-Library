@@ -28,9 +28,9 @@ body, html {
     position: relative;
     z-index: 1; /* 确保内容层在最顶层 */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* 确保主内容区域占满整个高度 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 100vh; /* 确保主内容区域占满整个视口高度 */
   }
   
   .box {
