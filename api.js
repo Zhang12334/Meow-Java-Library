@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    background: url('https://example.com/background.jpg') center/cover no-repeat;
+                    background: url('https://bing.img.run/1920x1080.php') center/cover no-repeat;
                 }
                 .container {
                     position: relative;
@@ -54,8 +54,4 @@ app.get('/', (req, res) => {
     `;
 
     res.send(htmlContent);
-});
-
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
 });
