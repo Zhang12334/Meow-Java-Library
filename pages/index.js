@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const backgroundImageUrl = 'https://bing.img.run/1920x1080.php'; // 自定义背景图片 URL
+const backgroundImageUrl = 'https://bz.w3h5.com/img/fhd'; // 自定义背景图片 URL
 const blurAmount = 5; // 自定义背景模糊程度
 
 export default function Home() {
