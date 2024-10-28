@@ -1,12 +1,23 @@
 {
-    "name": "meowjavalibrary",
+    "name": "meow-java-library",
     "version": "1.0.0",
-    "main": "api.js",
+    "description": "A Java Library",
+    "main": "index.js",
     "scripts": {
-      "start": "node api.js"
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint"
     },
     "dependencies": {
-      "express": "^4.17.1"
+      "next": "latest",
+      "react": "latest",
+      "react-dom": "latest"
+    },
+    "devDependencies": {},
+    "author": "Zhang1233",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Zhang12334/meow-java-library.git"
     }
   }
-  
