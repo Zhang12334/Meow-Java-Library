@@ -11,13 +11,43 @@ export default function Home() {
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
-            setIsHeaderVisible(true); // 显示导航栏
+            setIsHeaderVisible(true);
             setTimeout(() => {
-                setIsContentVisible(true); // 显示内容
-            }, 300); // 0.3秒后加载内容
-        }, 200); // 0.2秒后开始加载导航栏
+                setIsContentVisible(true);
+            }, 300);
+        }, 200);
 
         return () => clearTimeout(timeoutId);
+    }, []);
+
+    useEffect(() => {
+        async function fetchFont() {
+            try {
+                const response = await fetch('https://pan.ofs.moe:65001/d/tuchuang/MeowJavaLibrary/fonts/GenJyuuGothic-Normal-2.ttf', {
+                    method: 'GET',
+                    mode: 'cors',
+                });
+
+                if (response.redirected) {
+                    // 处理重定向
+                    const newUrl = response.url;
+                    console.log('Font redirected to:', newUrl);
+                    const fontFace = new FontFace('GenJyuuGothic', `url(${newUrl})`);
+                    document.fonts.add(fontFace);
+                    await fontFace.load();
+                    document.body.style.fontFamily = 'GenJyuuGothic, sans-serif';
+                } else {
+                    const fontFace = new FontFace('GenJyuuGothic', response.url);
+                    document.fonts.add(fontFace);
+                    await fontFace.load();
+                    document.body.style.fontFamily = 'GenJyuuGothic, sans-serif';
+                }
+            } catch (error) {
+                console.error('Error loading font:', error);
+            }
+        }
+
+        fetchFont();
     }, []);
 
     useEffect(() => {
@@ -31,7 +61,6 @@ export default function Home() {
                     index++;
                 } else {
                     clearInterval(titleInterval);
-                    // 开始加载副标题
                     const subtitleText = 'A Java Download Station';
                     index = 0;
                     const subtitleInterval = setInterval(() => {
