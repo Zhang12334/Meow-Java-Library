@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 const backgroundImageUrl = 'https://pan.ofs.moe:65001/d/tuchuang/MeowJavaLibrary/background/th.dmg'; // 自定义背景图片 URL
-const blurAmount = 2; // 自定义背景模糊程度
+const blurAmount = 5; // 自定义背景模糊程度
 
 export default function Home() {
   return (

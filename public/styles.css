@@ -40,5 +40,8 @@ body, html {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* 启用 Flexbox 布局 */
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
     text-align: center; /* 可选：使文本居中对齐 */
   }

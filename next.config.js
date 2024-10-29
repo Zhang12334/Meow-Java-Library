@@ -1,7 +1,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['bing.img.run'], // 允许从该域名加载图片
+    unoptimized: true, // 禁用图像优化和域名限制
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
