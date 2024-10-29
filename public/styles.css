@@ -38,7 +38,7 @@ body, html {
   }
   
   .box {
-    display: flex;
+    display: table;
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
     background: rgba(255, 255, 255, 0.7); /* 调整透明度 */
