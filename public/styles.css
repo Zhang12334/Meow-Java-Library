@@ -3,15 +3,102 @@ body, html {
     padding: 0;
     height: 100%;
     overflow: hidden;
+    font-size: 16px; /* 设置基本字体大小 */
+}
+
+body {
+    user-select: none; /* 禁止文本选择 */
+    cursor: default; /* 使用默认光标 */
+}
+
+input, textarea {
+    user-select: text; /* 允许输入框内文本选择 */
+    cursor: text; /* 在输入框内使用文本光标 */
 }
 
 .container {
-    position: relative;
+    position: fixed; /* 使用 fixed 使其填满整个页面 */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center; /* 水平居中 */
+    flex-direction: column; /* 纵向排列 */
+}
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* 两端对齐 */
     align-items: center; /* 垂直居中 */
+    background: rgba(26, 188, 156, 0.6); /* 使用 Turquoise Blue */
+    backdrop-filter: blur(10px); /* 毛玻璃效果 */
+    padding: 10px 20px; /* 内边距 */
+    width: 100%; /* 100% 宽度 */
+    z-index: 2; /* 确保在最顶层 */
+    box-sizing: border-box; /* 包含内边距 */
+    opacity: 0; /* 初始透明度 */
+    animation: fadeInNav 1s forwards; /* 导航栏渐显动画 */
+    animation-delay: 0.5s; /* 延迟0.5秒开始加载 */
+}
+
+.site-name:hover {
+    color: rgba(255, 255, 255, 0.8); /* 悬停时改变颜色 */
+}
+
+.site-name {
+    font-size: 2em; /* 调整为所需的大小 */
+    color: #fff; /* 主字体颜色 */
+    text-decoration: none; /* 去掉下划线 */
+    margin-right: auto; /* 将其推向左侧 */
+    transition: color 0.3s; /* 添加过渡效果 */
+    text-shadow: 
+        1px 1px 2px rgba(0, 0, 0, 0.5), 
+        -1px -1px 2px rgba(0, 0, 0, 0.5),
+        1px -1px 2px rgba(0, 0, 0, 0.5),
+        -1px 1px 2px rgba(0, 0, 0, 0.5); /* 为四个方向添加模糊阴影 */
+}
+
+.site-name::after {
+    content: attr(data-text); /* 用于重复字体 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: transparent; /* 字体颜色透明 */
+    text-shadow: 
+        0 0 5px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(0, 0, 0, 0.5); /* 添加多个模糊阴影 */
+    z-index: -1; /* 确保在背景 */
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+}
+
+.logo img {
+    width: 40px; /* Logo 大小 */
+    height: 40px; /* Logo 大小 */
+    margin-right: 10px; /* Logo 和名称之间的间距 */
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap; /* 允许换行 */
+    gap: 20px; /* 导航项之间的间距 */
+    max-width: calc(100% - 150px); /* 限制最大宽度，减去 Logo 和边距的空间 */
+}
+
+.nav a {
+    color: #fff; /* 字体颜色 */
+    text-decoration: none; /* 去掉下划线 */
+    font-size: 1.2em; /* 字体大小 */
+    transition: color 0.3s; /* 颜色渐变效果 */
+}
+
+.nav a:hover {
+    color: rgba(255, 255, 255, 0.8); /* 悬停时改变颜色 */
 }
 
 .background {
@@ -20,38 +107,49 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
+    background: url('https://bing.img.run/uhd.php') no-repeat center center; /* 设置背景图像，居中对齐 */
+    background-size: cover; /* 确保背景图像覆盖整个视口 */
+    filter: blur(2px); /* 普通模糊效果 */
     z-index: -1; /* 确保背景层在最底层 */
-    background-color: black; /* 初始背景颜色为黑色 */
     animation: fadeInBackground 1.5s forwards; /* 渐显动画 */
 }
 
+/* 确保 main 层级在最顶层并居中 */
 .main {
     position: relative;
     z-index: 1; /* 确保内容层在最顶层 */
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
-    opacity: 0; /* 初始透明度 */
-    animation: fadeIn 1.5s 0.5s forwards; /* 渐入动画，延迟0.5秒加载 */
-}
-
-.box {
     display: flex; /* 使用 flexbox 布局 */
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
-    background: rgba(255, 255, 255, 0.7); /* 调整透明度 */
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    white-space: nowrap; /* 文字不换行 */
-    width: calc(100% - 60px); /* 固定宽度，减去左右各30px的内边距 */
-    max-width: 400px; /* 设置最大宽度，防止过宽 */
-    height: calc(100% - 60px); /* 固定高度，减去上下各30px的内边距 */
-    text-align: center; /* 使文本居中对齐 */
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* 初始透明度 */
+    animation: fadeIn 1.5s 0.8s forwards; /* 渐入动画，延迟0.8秒加载 */
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8); /* 轻微透明背景 */
+    border-radius: 20px;
+    padding: 2vw 3vw; /* 减小上下内边距，左右保持不变 */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    width: auto;
+    max-width: 90%;
+    height: auto; /* 高度自适应内容 */
+    text-align: center;
+    font-size: 2vw;
+    transition: height 0.5s ease; /* 过渡效果 */
+}
+
+.subtitle {
+    text-align: center;
+    color: #333; /* 副标题颜色 */
+    font-size: 1.5vw;
+    opacity: 1; /* 使副标题可见 */
+    transition: opacity 0.5s ease; /* 渐显效果 */
 }
 
 /* 背景渐显动画 */
@@ -73,5 +171,15 @@ body, html {
     to {
         opacity: 1;
         transform: scale(1); /* 最终缩放比例 */
+    }
+}
+
+/* 导航栏渐显动画 */
+@keyframes fadeInNav {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
