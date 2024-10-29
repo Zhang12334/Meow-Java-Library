@@ -35,6 +35,8 @@ body, html {
     display: flex;
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
+    opacity: 0; /* 初始透明度 */
+    animation: fadeIn 1.5s 1.5s forwards; /* 渐入动画，延迟加载 */
 }
 
 .box {
@@ -51,8 +53,6 @@ body, html {
     height: calc(100% - 60px); /* 固定高度，减去上下各30px的内边距 */
     max-height: 300px; /* 设置最大高度，防止过高 */
     text-align: center; /* 使文本居中对齐 */
-    opacity: 0; /* 初始透明度 */
-    animation: fadeIn 3s forwards; /* 渐入动画 */
 }
 
 /* 背景渐显动画 */
@@ -65,6 +65,7 @@ body, html {
     }
 }
 
+/* 内容渐显动画 */
 @keyframes fadeIn {
     from {
         opacity: 0;
