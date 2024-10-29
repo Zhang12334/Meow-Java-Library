@@ -24,7 +24,7 @@ body, html {
     background-position: center;
     z-index: -1; /* 确保背景层在最底层 */
     background-color: black; /* 初始背景颜色为黑色 */
-    animation: revealBackground 2s forwards; /* 渐显动画 */
+    animation: revealBackground 3s forwards; /* 渐显动画 */
   }
   
   .main {
@@ -52,7 +52,7 @@ body, html {
     max-height: 300px; /* 设置最大高度，防止过高 */
     text-align: center; /* 使文本居中对齐 */
     opacity: 0; /* 初始透明度 */
-    animation: fadeIn 1s forwards; /* 渐入动画 */
+    animation: fadeIn 2s forwards; /* 渐入动画 */
   }
   
   @keyframes fadeIn {
