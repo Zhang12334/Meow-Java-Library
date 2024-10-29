@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useEffect, useRef } from 'react';
 
-const backgroundImageUrl = 'https://pan.ofs.moe:65001/d/tuchuang/MeowJavaLibrary/background/th.dmg'; // 自定义背景图片 URL
+const backgroundImageUrl = 'https://bing.img.run/uhd.php'; // 自定义背景图片 URL
 const blurAmount = 5; // 自定义背景模糊程度
 
 export default function Home() {
