@@ -50,7 +50,7 @@ body, html {
     white-space: nowrap; /* 文字不换行 */
     width: calc(100% - 60px); /* 固定宽度，减去左右各30px的内边距 */
     max-width: 400px; /* 设置最大宽度，防止过宽 */
-    max-height: 300px; /* 设置最大高度，防止过高 */
+    height: calc(100% - 60px); /* 固定高度，减去上下各30px的内边距 */
     text-align: center; /* 使文本居中对齐 */
 }
 
