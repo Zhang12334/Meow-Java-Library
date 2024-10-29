@@ -40,5 +40,7 @@ body, html {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     white-space: nowrap; /* 文字不换行 */
-    text-align: center; /* 可选：使文本居中对齐 */
+    text-align: center; /* 使文本居中对齐 */
+    width: calc(100% + 60px); /* 固定宽度，加上左右各30px的内边距 */
+    max-width: 400px; /* 设置最大宽度，防止过宽 */
   }
