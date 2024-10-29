@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'GenJyuuGothic';
+    src: url('/GenJyuuGothic-Normal-2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'GenJyuuGothic', sans-serif; /* 设置全局字体 */
+}
+
 body, html {
     margin: 0;
     padding: 0;
