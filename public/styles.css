@@ -35,14 +35,25 @@ body, html {
   
   .box {
     display: inline-block; /* 宽度根据内容自动调整 */
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.7); /* 调整透明度 */
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     white-space: nowrap; /* 文字不换行 */
-    text-align: center; /* 使文本居中对齐 */
     width: calc(100% + 60px); /* 固定宽度，加上左右各30px的内边距 */
     max-width: 400px; /* 设置最大宽度，防止过宽 */
-    height: calc(100% + 60px); /* 固定高度，加上上下各30px的内边距 */
+    height: calc(100% + 20px); /* 固定高度，加上上下各10px的内边距 */
     max-height: 300px; /* 设置最大高度，防止过高 */
+    text-align: center; /* 使文本居中对齐 */
+    opacity: 0; /* 初始透明度 */
+    animation: fadeIn 1s forwards; /* 渐入动画 */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
