@@ -24,7 +24,7 @@ body, html {
     background-position: center;
     z-index: -1; /* 确保背景层在最底层 */
     background-color: black; /* 初始背景颜色为黑色 */
-    animation: revealBackground 3s forwards; /* 渐显动画 */
+    animation: fadeIn 3s forwards; /* 渐显动画 */
   }
   
   .main {
@@ -63,14 +63,5 @@ body, html {
     to {
       opacity: 1;
       transform: scale(1); /* 最终缩放比例 */
-    }
-  }
-  
-  @keyframes revealBackground {
-    from {
-      background-color: black; /* 初始背景颜色为黑色 */
-    }
-    to {
-      background-color: transparent; /* 最终背景颜色为透明 */
     }
   }
